@@ -1,0 +1,12 @@
+﻿@model UserTask
+
+<h1>Edit a Task</h1>
+<form method="post">
+    <input type="text" name="Description" value="@Model.Description" />
+    <input type="date" name="DueDate" value="@string.Format("{0:yyyy-MM-dd}", Model.DueDate)" />
+    @* found this from google. *@
+    @Html.CheckBoxFor(m => Model.IsComplete)
+    <input type="hidden" name="UserId" value="@Model.UserId" />
+    <input type="hidden" name="Id" value="@Model.Id" />
+    <input type="submit" value="Save" />
+</form>
